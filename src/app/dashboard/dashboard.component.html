@@ -1,0 +1,33 @@
+<div style="height: 90vh;overflow: hidden;">
+  <div class="container">
+    <div class="row m-2">
+      <div class="col-md-3 ">
+        <button class="btn btn-md btn-primary btn-block text-uppercase" type="button" (click)="start()">
+          Start Timer
+        </button>
+      </div>
+  
+      <div class="col-md-3">
+        <button class="btn btn-md btn-primary btn-block text-uppercase" type="button" (click)="end()">
+          End Timer
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+       <ul>
+         <li class="li">{{counter + '%'}}</li>
+         <li class="li">{{counter_1 + '%'}}</li>
+         <li class="li">{{counter_3 + '%'}}</li>
+       </ul>
+      </div>
+      <div class="col-md-10">
+        <img *ngIf="img_1 == true" class="img-fluid ht" src="assets/irrigation_1.jpg" alt="" />
+        <img *ngIf="img_01 == true"  class="img-fluid ht" src="assets/img_01.jpg" alt="" />
+        <img *ngIf="img_02 == true"  class="img-fluid ht" src="assets/img_02.jpg" alt="" />
+        <img *ngIf="img_03 == true"  class="img-fluid ht" src="assets/img_3.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+
+</div>
