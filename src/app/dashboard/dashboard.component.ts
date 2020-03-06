@@ -40,38 +40,47 @@ export class DashboardComponent implements OnInit {
   start() {
     this.img_1 = false;
     this.img_01 = true;
-    // this.img_02 = false;
-    // this.img_03 = false;
     let that = this;
     let temp = 1;
     this.clear_1 = setInterval(function () {
       that.counter = temp * 20;
       if (that.counter >= 100) {
         that.clear(that.clear_1);
-        that.secondCounter()
+        that.secondCounter();
 
       }
       temp++
     }, this.time *200,(4));
   }
 
-  stopfirst() {
-    let that = this;
-    let temp = this.counter;
-    this.clearFirstStop = setInterval(() => {
-      that.counter = temp - 20;
-      temp = that.counter;
-      if (temp <= 0) {
-        console.log("hi");
+  // stopfirst(event) {
+  //   let that = this;
+  //   let temp = this.counter;
+  //   this.clearFirstStop = setInterval(() => {
+  //     that.counter = temp - 20;
+  //     temp = that.counter;
+  //     if (temp <= 0) {
+        
+  //       console.log("hi");
      
-        this.clear(that.clearFirstStop);
+  //       this.clear(that.clearFirstStop);
       
-      }
-      if(that.counter <= 0){
-        that.clear(that.clearFirstStop);
-      }
-    },that.time *200,(3));
-  }
+      
+  //     }
+  //   },that.time *200,(3));
+  // }
+
+  // stopSecond() {
+  //   let that = this;
+  //   let temp = this.counter_1;
+  //   this.clearFirst = setInterval(() => {
+  //     that.counter_1 = temp - 20;
+  //     temp = that.counter_1;
+  //     if (temp <= 0) {
+  //       this.clear(that.clearFirst);
+  //     }
+  //   }, this.time* 200,(1));
+  // }
 
   clear(clear) {
     clearInterval(clear);
@@ -83,7 +92,7 @@ export class DashboardComponent implements OnInit {
     this.img_02 = true;
     let that = this;
     let temp = 1;
-    this.stopfirst();
+    // this.stopfirst();
     this.clear_2 = setInterval(function () {
       that.counter_1 = temp * 20;
       if (that.counter_1 >= 100) {
@@ -102,7 +111,7 @@ export class DashboardComponent implements OnInit {
     this.img_03 = true;
     let that = this;
     let temp = 1;
-    this.stopSecond();
+    // this.stopSecond();
     this.clear_2 = setInterval(function () {
       that.counter_3 = temp * 20;
       if (that.counter_3 >= 100) {
@@ -115,17 +124,7 @@ export class DashboardComponent implements OnInit {
     }, this.time* 200,(0));
   }
 
-  stopSecond() {
-    let that = this;
-    let temp = this.counter_1;
-    this.clearFirst = setInterval(() => {
-      that.counter_1 = temp - 20;
-      temp = that.counter_1;
-      if (temp <= 0) {
-        this.clear(that.clearFirst);
-      }
-    }, this.time* 200,(1));
-  }
+
 
   end(){
     this.clear(this.clear_2)
@@ -136,11 +135,13 @@ export class DashboardComponent implements OnInit {
     console.log(this.counter_1);
     console.log(this.counter_3);
 
-  
+    // if(this.counter >= 0){
+    //   this.stopfirst();
+    // }
 
-    if(this.counter_1 > 0){
-      this.stopSecond();
-    }
+    // if(this.counter_1 > 0){
+    //   this.stopSecond();
+    // }
   }
 }
 
